@@ -30,20 +30,20 @@ function Header({leftItem, rightItem, title}) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: Colors.White.BACKGROUND
+    flex: 1
   },
   content: {
     flex: 1
   },
   header: {
-    paddingTop: 30,
+    paddingTop: 20,
     paddingHorizontal: 10,
-    paddingBottom: 15,
+    // paddingBottom: 15,
+    height: 60,
     backgroundColor: Colors.Green.NORMAL,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // alignItems: 'center'
+    alignItems: 'center'
   },
   headerText: {
     color: Colors.White.NORMAL,

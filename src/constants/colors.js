@@ -4,7 +4,9 @@ export default {
     OPAQUE: 'rgba(0,0,0,0.5)'
   },
   Blue: {
-    UNDERLAY: 'rgb(212,232,249)'
+    UNDERLAY: 'rgb(212,232,249)',
+    LINK: 'rgb(41,135,210)',
+    BUTTON: 'rgb(56,140,211)'
   },
   White: {
     NORMAL: '#FFF',
@@ -18,6 +20,9 @@ export default {
   Gray: {
     BYLINE: 'rgb(123,123,124)',
     BORDER: 'rgb(125,125,125)',
-    TEXT: 'rgb(176,176,174)'
+    BORDER_LIGHT: 'rgb(223,223,223)',
+    TEXT: 'rgb(176,176,174)',
+    TEXT_DARK: 'rgb(141,141,141)',
+    LIGHT: 'rgb(249,249,249)'
   }
 }

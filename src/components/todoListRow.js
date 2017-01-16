@@ -15,6 +15,16 @@ export default function TodoListRow({name, count, onPress}) {
     </TouchableHighlight>
   );
 }
+export function NewTodoListRow({onPress}) {
+  return (
+    <TouchableHighlight onPress={onPress} underlayColor={Colors.Blue.UNDERLAY}>
+      <View style={styles.row}>
+        <Icon name="add-to-list" size={16} color={Colors.Blue.LINK} style={{marginLeft: 3, marginRight: -3}} />
+        <Text style={[styles.name, styles.textLink]}>Create list</Text>
+      </View>
+    </TouchableHighlight>
+  );
+}
 
 const styles = StyleSheet.create({
   row: {
@@ -30,6 +40,9 @@ const styles = StyleSheet.create({
   name: {
     flex: 1,
     marginLeft: 10
+  },
+  textLink: {
+    color: Colors.Blue.LINK
   },
   count: {
     color: Colors.Gray.BYLINE

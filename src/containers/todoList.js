@@ -1,7 +1,8 @@
 import React from 'react';
-import {ScrollView, Dimensions, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {ScrollView, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 import Colors from '@constants/colors';
+import Text from '@components/text';
 import Screen from '@components/screen';
 import TodoItem from '@components/todoListItem/itemRow';
 import NewRow from '@components/todoListItem/newRow';
@@ -22,13 +23,11 @@ class TodoList extends React.Component {
         }
         title="Groceries"
       >
-        <Image
-          style={styles.background}
-          source={require('../assets/background.png')}
-          resizeMode={Image.resizeMode.cover}
-        />
         <ScrollView style={styles.scrollView}>
-          <NewRow style={styles.newRow} />
+          <NewRow
+            style={styles.newRow}
+            onSubmitEditing={() => console.log('submit')}
+          />
 
           <View>
             <TodoItem name="Agenda item one" />
@@ -57,13 +56,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'green',
     paddingTop: 40
-  },
-  background: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height
   },
   scrollView: {
     flex: 1,

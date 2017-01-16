@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Entypo';
 import Row from '@components/todoListItem/row';
 import Colors from '@constants/colors';
 
-export default function NewRow ({style}) {
+export default function NewRow ({style, onSubmitEditing}) {
   return (
     <Row
       style={[styles.row, style]}
@@ -23,6 +23,7 @@ export default function NewRow ({style}) {
         placeholderTextColor={Colors.White.NORMAL}
         selectionColor={Colors.White.NORMAL}
         style={styles.input}
+        onSubmitEditing={onSubmitEditing}
       />
     </Row>
   )
