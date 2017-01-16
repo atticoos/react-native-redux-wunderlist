@@ -1,5 +1,6 @@
 import React from 'react';
 import {ScrollView, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {connect} from 'react-redux';
 import Icon from 'react-native-vector-icons/Entypo';
 import Colors from '@constants/colors';
 import Text from '@components/text';
