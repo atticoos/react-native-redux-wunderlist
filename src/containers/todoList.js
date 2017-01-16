@@ -8,6 +8,8 @@ import Screen from '@components/screen';
 import TodoItem from '@components/todoListItem/todoItem';
 import TodoInput from '@components/todoListItem/todoInput';
 import VisibleTodoToggle from '@components/todoListItem/visibleTodoToggle';
+import * as TodoActions from '@actions/todos';
+import * as ScreenActions from '@actions/todoListScreen';
 
 class TodoList extends React.Component {
   render() {
@@ -47,7 +49,6 @@ const styles = StyleSheet.create({
     overflow: 'visible'
   },
   contentContainer: {
-    // paddingHorizontal: 8,
     overflow: 'visible'
   },
   newRow: {
