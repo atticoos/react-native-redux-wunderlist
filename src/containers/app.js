@@ -1,35 +1,32 @@
 import React from 'react';
-import Drawer from 'react-native-drawer';
-import DrawerPanel from './drawer';
-import TodoList from './todoList';
-import * as DrawerActions from '../actions/drawerActions';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import {Navigator} from 'react-native';
+import Routes from '@constants/routes';
+import TodoLists from '@containers/todoLists';
+import TodoList from '@containers/todoList';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.renderScene = this.renderScene.bind(this);
+  }
+  renderScene(route, navigator) {
+    switch(route.name) {
+      case Routes.TodoLists:
+        return <TodoLists navigator={navigator} />
+      case Routes.TodoList:
+        return <TodoList navigator={navigator} />
+      default:
+        return <TodoLists navigator={navigator} />
+    }
+  }
   render() {
     return (
-      <Drawer
-        type="static"
-        open={this.props.drawerOpen}
-        onClose={() => this.props.drawerActions.drawerClosed()}
-        onOpen={() => this.props.drawerActions.drawerOpened()}
-        content={<DrawerPanel />}
-        openDrawerOffset={100}
-        tweenHandler={Drawer.tweenPresets.parallax}
-      >
-        <TodoList />
-      </Drawer>
+      <Navigator
+        initialRoute={{name: Routes.TodoLists}}
+        renderScene={this.renderScene}
+      />
     );
   }
 }
 
-const selector = state => ({
-  drawerOpen: state.drawer
-});
-
-const actions = dispatch => ({
-  drawerActions: bindActionCreators(DrawerActions, dispatch)
-});
-
-export default connect(selector, actions)(App);
+export default App;
