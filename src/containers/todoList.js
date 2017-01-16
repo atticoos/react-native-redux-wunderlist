@@ -16,8 +16,11 @@ class TodoList extends React.Component {
     return (
       <Screen title="Your Todos">
         <ScrollView style={styles.scrollView}>
-          <View style={styles.contentContainer}>
-          <TodoInput style={styles.newRow} />
+          <TodoInput
+            style={styles.inputRow}
+            onChangeText={text => {}}
+            onSubmitEditing={() => {}}
+          />
 
           <View>
             <TodoItem name="Agenda item one" onPress={() => console.log('pressed')} onChange={() => console.log('changed')} />
@@ -34,7 +37,6 @@ class TodoList extends React.Component {
             <TodoItem name="A third item" completed={true} />
             <TodoItem name="Possibly a fourth" completed={true} />
           </View>
-          </View>
 
         </ScrollView>
       </Screen>
@@ -48,10 +50,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     overflow: 'visible'
   },
-  contentContainer: {
-    overflow: 'visible'
-  },
-  newRow: {
+  inputRow: {
     marginBottom: 8
   },
   visibleToggle: {
