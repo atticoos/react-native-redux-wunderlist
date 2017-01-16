@@ -3,9 +3,12 @@ import {TouchableWithoutFeedback, View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from '@constants/colors';
 
-export default function Checkbox({checked = false, onChange}) {
+export default function Checkbox({checked = false, onPress}) {
   return (
-    <TouchableWithoutFeedback onPress={onChange}>
+    <TouchableWithoutFeedback
+      onPress={onPress}
+      hitSlop={{top: 5, right: 5, bottom: 5, left: 5}}
+    >
       <View style={styles.container}>
         <View style={[styles.outline, checked && styles.outlineActive]} />
         {checked &&

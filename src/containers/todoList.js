@@ -17,7 +17,7 @@ class TodoList extends React.Component {
           <TodoInput style={styles.newRow} />
 
           <View>
-            <TodoItem name="Agenda item one" />
+            <TodoItem name="Agenda item one" onPress={() => console.log('pressed')} onChange={() => console.log('changed')} />
             <TodoItem name="Item two" />
             <TodoItem name="A third item" />
             <TodoItem name="Possibly a fourth" />
@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TodoList;
+export default connect()(TodoList);

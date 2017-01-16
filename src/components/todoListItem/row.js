@@ -16,21 +16,27 @@ export default function TodoListRow ({onPress, ...props}) {
   );
 }
 
-function Row ({style, backgroundColor, control, children}) {
-  var rowStyle = [styles.row, style];
-  if (backgroundColor) {
-    rowStyle.push({backgroundColor});
+class Row extends React.Component {
+  setNativeProps(...props) {
+    this.view.setNativeProps(...props)
   }
-  return (
-    <View style={rowStyle}>
-      {control &&
-        <View style={styles.left}>{control}</View>
-      }
-      <View style={styles.content}>
-        {children}
+  render() {
+    var {style, backgroundColor, control, children} = this.props;
+    var rowStyle = [styles.row, style];
+    if (backgroundColor) {
+      rowStyle.push({backgroundColor});
+    }
+    return (
+      <View style={rowStyle} ref={component => this.view = component}>
+        {control &&
+          <View style={styles.left}>{control}</View>
+        }
+        <View style={styles.content}>
+          {children}
+        </View>
       </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({

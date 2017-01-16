@@ -5,12 +5,14 @@ import Text from '@components/text';
 import Checkbox from '@components/checkbox';
 import Row from '@components/todoListItem/row';
 
-export default function TodoListItemRow ({name, completed, onPress}) {
+export default function TodoListItemRow ({name, completed, onPress, onChange}) {
   return (
     <Row
       style={completed && styles.completedRow}
       onPress={onPress}
-      control={<Checkbox checked={completed} />}
+      control={
+        <Checkbox checked={completed} onPress={onChange} />
+      }
     >
       <Text style={[styles.name, completed && styles.completedText]}>{name}</Text>
     </Row>
