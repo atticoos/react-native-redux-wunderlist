@@ -1,7 +1,6 @@
 import React from 'react';
 import {Dimensions, Image, Navigator, StatusBar, StyleSheet, View} from 'react-native';
 import Routes from '@constants/routes';
-import TodoLists from '@containers/todoLists';
 import TodoList from '@containers/todoList';
 
 class App extends React.Component {
@@ -12,12 +11,10 @@ class App extends React.Component {
   }
   renderScene(route, navigator) {
     switch(route.name) {
-      case Routes.TodoLists:
-        return <TodoLists navigator={navigator} />
       case Routes.TodoList:
         return <TodoList navigator={navigator} />
       default:
-        return <TodoLists navigator={navigator} />
+        return <TodoList navigator={navigator} />
     }
   }
   configureScene() {
@@ -33,7 +30,7 @@ class App extends React.Component {
         />
         <StatusBar barStyle="light-content" />
         <Navigator
-          initialRoute={{name: Routes.TodoLists}}
+          initialRoute={{name: Routes.TodoList}}
           configureScene={this.configureScene}
           renderScene={this.renderScene}
         />

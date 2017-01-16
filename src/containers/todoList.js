@@ -11,18 +11,7 @@ import VisibleTodoToggle from '@components/todoListItem/visibleTodoToggle';
 class TodoList extends React.Component {
   render() {
     return (
-      <Screen
-        leftItem={
-          <TouchableOpacity onPress={() => this.props.navigator.pop()}>
-            <Icon
-              color={Colors.White.NORMAL}
-              size={24}
-              name="chevron-left"
-            />
-          </TouchableOpacity>
-        }
-        title="Groceries"
-      >
+      <Screen title="Your Todos">
         <ScrollView style={styles.scrollView}>
           <NewRow
             style={styles.newRow}
