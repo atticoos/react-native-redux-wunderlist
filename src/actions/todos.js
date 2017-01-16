@@ -1,13 +1,13 @@
 import * as ActionTypes from '@actions/types';
 
-export function addTodo() {
+export function addTodo(text) {
 
 }
 
-export function removeTodo() {
+export function removeTodo(id) {
 
 }
 
-export function toggleTodo() {
+export function toggleCompleted(id) {
 
 }
