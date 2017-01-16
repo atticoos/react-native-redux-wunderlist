@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import Swipeout from 'react-native-swipeout';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Colors from '@constants/colors';
@@ -9,9 +9,9 @@ import Row from '@components/todoListItem/row';
 
 
 
-export default function TodoListItemRow ({name, completed, onPress, onChange}) {
+export default function TodoListItemRow ({name, completed, onPress, onChange, onRemove}) {
   var buttons = [{
-    component: <RemoveButton />,
+    component: <RemoveButton onPress={onRemove} />,
     backgroundColor: 'transparent'
   }]
   return (
@@ -29,12 +29,14 @@ export default function TodoListItemRow ({name, completed, onPress, onChange}) {
   );
 }
 
-function RemoveButton () {
+function RemoveButton ({onPress}) {
   return (
     <View style={styles.swipeContainer}>
-      <View style={styles.removeButton}>
-        <Icon name="trash-o" color={Colors.White.NORMAL} size={18} />
-      </View>
+      <TouchableOpacity onPress={onPress}>
+        <View style={styles.removeButton}>
+          <Icon name="trash-o" color={Colors.White.NORMAL} size={18} />
+        </View>
+      </TouchableOpacity>
     </View>
   )
 }
