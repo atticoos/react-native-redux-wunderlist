@@ -15,6 +15,8 @@ class TodoList extends React.Component {
         <ScrollView style={styles.scrollView}>
           <NewRow
             style={styles.newRow}
+            value={''}
+            onChangeText={todoText => {}}
             onSubmitEditing={() => console.log('submit')}
           />
 

@@ -1,8 +1,6 @@
 import {combineReducers} from 'redux';
-import drawer from './drawer';
-import todoLists from './todoLists';
+import todos from './todos';
 
 export default combineReducers({
-  drawer,
-  todoLists
+  todos
 });
