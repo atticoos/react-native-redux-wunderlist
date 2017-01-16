@@ -14,6 +14,7 @@ class TodoList extends React.Component {
     return (
       <Screen title="Your Todos">
         <ScrollView style={styles.scrollView}>
+          <View style={styles.contentContainer}>
           <TodoInput style={styles.newRow} />
 
           <View>
@@ -31,6 +32,7 @@ class TodoList extends React.Component {
             <TodoItem name="A third item" completed={true} />
             <TodoItem name="Possibly a fourth" completed={true} />
           </View>
+          </View>
 
         </ScrollView>
       </Screen>
@@ -41,7 +43,12 @@ class TodoList extends React.Component {
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
-    padding: 8
+    paddingVertical: 8,
+    overflow: 'visible'
+  },
+  contentContainer: {
+    // paddingHorizontal: 8,
+    overflow: 'visible'
   },
   newRow: {
     marginBottom: 8

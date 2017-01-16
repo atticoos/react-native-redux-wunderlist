@@ -29,11 +29,7 @@ class App extends React.Component {
           resizeMode={Image.resizeMode.cover}
         />
         <StatusBar barStyle="light-content" />
-        <Navigator
-          initialRoute={{name: Routes.TodoList}}
-          configureScene={this.configureScene}
-          renderScene={this.renderScene}
-        />
+        <TodoList />
       </View>
     );
   }

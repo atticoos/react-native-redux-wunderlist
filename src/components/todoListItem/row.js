@@ -6,13 +6,17 @@ import Colors from '@constants/colors';
 export default function TodoListRow ({onPress, ...props}) {
   if (onPress) {
     return (
-      <TouchableHighlight onPress={onPress} underlayColor={Colors.Blue.UNDERLAY}>
-        <Row {...props} />
-      </TouchableHighlight>
+      <View style={styles.rowContainer}>
+        <TouchableHighlight onPress={onPress} underlayColor={Colors.Blue.UNDERLAY}>
+          <Row {...props} />
+        </TouchableHighlight>
+      </View>
     );
   }
   return (
-    <Row {...props} />
+    <View style={styles.rowContainer}>
+      <Row {...props} />
+    </View>
   );
 }
 
@@ -27,7 +31,7 @@ class Row extends React.Component {
       rowStyle.push({backgroundColor});
     }
     return (
-      <View style={rowStyle} ref={component => this.view = component}>
+      <View style={rowStyle} ref={component => this.view=component}>
         {control &&
           <View style={styles.left}>{control}</View>
         }
@@ -40,6 +44,9 @@ class Row extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  rowContainer: {
+    paddingHorizontal: 8
+  },
   row: {
     padding: 15,
     backgroundColor: Colors.White.NORMAL,

@@ -24,5 +24,8 @@ export default {
     TEXT: 'rgb(176,176,174)',
     TEXT_DARK: 'rgb(141,141,141)',
     LIGHT: 'rgb(249,249,249)'
+  },
+  Red: {
+    DANGER: 'rgb(214,76,67)'
   }
 }
