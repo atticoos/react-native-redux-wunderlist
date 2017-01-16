@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   outline: {
     position: 'absolute',
-    top: 2,
+    top: 3,
     left: 2,
     width: 15,
     height: 15,

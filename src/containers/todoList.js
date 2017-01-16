@@ -4,8 +4,8 @@ import Icon from 'react-native-vector-icons/Entypo';
 import Colors from '@constants/colors';
 import Text from '@components/text';
 import Screen from '@components/screen';
-import TodoItem from '@components/todoListItem/itemRow';
-import NewRow from '@components/todoListItem/newRow';
+import TodoItem from '@components/todoListItem/todoItem';
+import TodoInput from '@components/todoListItem/todoInput';
 import VisibleTodoToggle from '@components/todoListItem/visibleTodoToggle';
 
 class TodoList extends React.Component {
@@ -13,12 +13,7 @@ class TodoList extends React.Component {
     return (
       <Screen title="Your Todos">
         <ScrollView style={styles.scrollView}>
-          <NewRow
-            style={styles.newRow}
-            value={''}
-            onChangeText={todoText => {}}
-            onSubmitEditing={() => console.log('submit')}
-          />
+          <TodoInput style={styles.newRow} />
 
           <View>
             <TodoItem name="Agenda item one" />
@@ -43,11 +38,6 @@ class TodoList extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'green',
-    paddingTop: 40
-  },
   scrollView: {
     flex: 1,
     padding: 8
