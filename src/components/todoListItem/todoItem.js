@@ -20,7 +20,7 @@ export default function TodoListItemRow ({name, completed, onPress, onChange, on
         style={[styles.row, completed && styles.completedRow]}
         onPress={onPress}
         control={
-          <Checkbox checked={completed} onPress={onChange} />
+          <Checkbox checked={completed} onPress={onPress} />
         }
       >
         <Text style={[styles.name, completed && styles.completedText]}>{name}</Text>

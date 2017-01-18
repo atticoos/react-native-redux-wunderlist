@@ -15,6 +15,9 @@ const initialTodos = [
 
 export default function todosReducer(state = initialTodos, action) {
   switch (action.type) {
+    case ActionTypes.ADD_TODO:
+    case ActionTypes.REMOVE_TODO:
+    case ActionTypes.TOGGLE_TODO:
     default:
       return state;
   }

@@ -11,8 +11,8 @@ const idGenerator = createIdGenerator();
 export function addTodo(text) {
   return {
     type: ActionTypes.ADD_TODO,
-    text,
-    id: idGenerator.next().value
+    id: idGenerator.next().value,
+    text
   }
 }
 

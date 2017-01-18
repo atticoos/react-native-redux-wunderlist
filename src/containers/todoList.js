@@ -18,19 +18,25 @@ class TodoList extends React.Component {
         <ScrollView style={styles.scrollView}>
           <TodoInput
             style={styles.inputRow}
-            onChangeText={text => {}}
-            onSubmitEditing={() => {}}
+            onChangeText={text => console.log('new todo text changed', text)}
+            onSubmitEditing={() => console.log('new todo submitted')}
           />
 
           <View>
-            <TodoItem name="Agenda item one" onPress={() => console.log('pressed')} onChange={() => console.log('changed')} />
+            <TodoItem name="Agenda item one"
+              onPress={() => console.log('pressed')}
+              onRemove={() => console.log('removing')}
+            />
             <TodoItem name="Item two" />
             <TodoItem name="A third item" />
             <TodoItem name="Possibly a fourth" />
           </View>
 
           <View style={styles.visibleToggle}>
-            <VisibleTodoToggle onPress={() => {}} />
+            <VisibleTodoToggle
+              active={true}
+              onPress={() => console.log('visible toggle pressed')}
+            />
           </View>
 
           <View>
@@ -43,6 +49,8 @@ class TodoList extends React.Component {
     );
   }
 }
+
+//value={''}
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -59,4 +67,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect()(TodoList);
+const selector = state => ({
+
+});
+
+export default connect(selector)(TodoList);
